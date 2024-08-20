@@ -4,8 +4,9 @@
   "description": "Starter project for an ES6 RESTful Express API",
   "main": "dist",
   "scripts": {
-    "dev": "env NODE_ENV=development nodemon -w src --exec \"babel-node src\"",
-    "build": "env NODE_ENV=production npx babel src -d dist",
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --exec \"npx babel-node src\"",
+    "babel-node": "babel-node",
+    "build": "cross-env NODE_ENV=production npx babel src -d dist",
     "start": "node dist",
     "lint": "standard \"src/**/*.js\" \"test/**/*.js\"",
     "test-watch": "ava --watch",
@@ -38,13 +39,14 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/node": "^7.0.0",
+    "@babel/core": "^7.25.2",
+    "@babel/node": "^7.25.0",
     "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-env": "^7.25.3",
     "@babel/register": "^7.0.0",
     "ava": "1.0.0-beta.8",
-    "nodemon": "1.18.7",
+    "cross-env": "^7.0.3",
+    "nodemon": "^1.18.7",
     "standard": "^12.0.1"
   },
   "babel": {
